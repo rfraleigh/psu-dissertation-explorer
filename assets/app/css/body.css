@@ -1,0 +1,124 @@
+/*!
+ * Dissertation_Explorer v1.0.0
+ * Author - Robbie Fraleigh, PhD - The Pennsylvania State University
+ * Licensed under Apache v2 (https://www.apache.org/licenses/LICENSE-2.0)
+ */
+@import url("material-design-iconic-font/css/material-design-iconic-font.min.css");
+
+body {
+  height: 100%;
+  background-color: #d8d8d8;
+}
+.application{
+    padding:25px;
+}
+
+
+#keyword-card,#committee-card,#author-card,#program-card {
+    margin:15px;
+}
+.panel-item{
+    margin:15px;
+}
+.header {
+    text-align:center;
+}
+.map_div {
+    position:relative;
+    /*z-index:-9999999;*/
+}
+.height_xs .chart{
+    overflow:auto;
+    height:100px;
+}
+.height_sm .chart{
+    overflow:auto;
+    height:175px;
+}
+.height_med .chart{
+    overflow:auto;
+    height:250px;
+}
+.height_lg .chart{
+    overflow:auto;
+    height:375px;
+}
+
+/*Card*/
+.app_card{
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.card {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    padding:15px;
+    padding-right:25px;
+
+
+}
+.card-light {
+    display:flex;
+    flex-flow:column;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    padding:15px;
+    padding-right:25px;
+}
+
+
+.card:hover {
+  box-shadow: 0 5px 5px rgba(0,0,0,0.15), 0 5px 5px rgba(0,0,0,0.15);
+}
+
+.card .card-title {
+    /*min-height:25px;*/
+    padding-left:25px;
+}
+#date.app_card .chart{
+    height: 125px;
+    overflow: auto;
+}
+#sender_email.app_card .chart,
+#receiver_email.app_card .chart,
+#concepts.app_card .chart,
+#thesaurus.app_card .chart,
+#country.app_card .chart,
+#university.app_card .chart
+{
+    height: 250px;
+    overflow: auto;
+}
+
+
+.zmdi {
+    font-size: 18px;
+    padding-left:7px;
+    padding-top:7px;
+
+}
+.zmdi:hover{
+  font-weight:bold;
+}
+
+.search_overlay {
+    min-width:125px;
+    max-width:250px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    position:absolute;
+    top:65px;
+    height:75px;
+    overflow:auto;
+    background:white;
+    visibility:hidden;
+    z-index:999;
+}
+.search_overlay:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.search_overlay i{
+    float:right;
+    height:15px;
+    padding:5px;
+}
