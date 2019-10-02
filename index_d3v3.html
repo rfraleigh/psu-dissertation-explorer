@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<<<<<<< HEAD
+   <meta charset="UTF-8">
+    <title>Penn State Dissertation Explorer</title>
+
+    <script type="text/javascript" src="assets/site/dcjs-3.0.12/js/d3.js"></script>
+    <script type="text/javascript" src="assets/site/dcjs-3.0.12/js/crossfilter.js"></script>
+    <script type="text/javascript" src="assets/site/dcjs-3.0.12/js/dc.js"></script>
+    <script type="text/javascript" src="assets/site/jquery-3.4.1.js"></script>
+
+    <script type="text/javascript" src="assets/site/bootstrap_4.0/js/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/site/bootstrap_4.0/js/bootstrap.bundle.js"></script>
+
+
+    <script type="text/javascript" src="assets/site/colorbrewer.js"></script>
+    <script type="text/javascript" src="assets/site/d3.layout.cloud.js"></script>
+
+    <link href="assets/site/dcjs-3.0.12/css/dc.css" rel="stylesheet">
+
+    <link href="assets/site/bootstrap_4.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="assets/app/css/header.css" rel="stylesheet">
+
+    <link href="assets/app/css/body.css" rel="stylesheet">
+    <link href="assets/app/css/featherlight.css" rel="stylesheet">
+    <link href="assets/app/css/override.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+    <script type="text/javascript" src="assets/app/js/featherlight.js"></script>
+
+    <script type="text/javascript" src="assets/app/js/functions.js"></script>
+    <script type="text/javascript" src="assets/app/js/dc_dim_grp.js"></script>
+<!---->
+    <script type="text/javascript" src="assets/app/js/rowchart.js"></script>
+    <script type="text/javascript" src="assets/app/js/barchart.js"></script>
+    <script type="text/javascript" src="assets/app/js/datatable.js"></script>
+<!--    <script type="text/javascript" src="assets/app/js/graph_network.js"></script>-->
+<!--    <script type="text/javascript" src="assets/app/js/map.js"></script>-->
+
+    <script type="text/javascript" src="assets/app/js/app.js"></script>
+
+
+    <header class="audience d-flex " id="landing">
+          <div class=" psu_logo"></div>
+          <div class="client_logo "></div>
+          <div class="container text-center my-auto landing landing_header" style="visibility: visible">
+              <div class="mb-1 " style="text-align:left; padding-top:25px;padding-bottom:5px;">
+                        <h2 class="script">Pennsylvania State University Dissertation Explorer</h2>
+                        <h4 class="script">Graduate school is about exploration and discovery.  Bringing unlikely threads of thought together in order to weave a new
+                        way of thinking, a new technology, a new path forward.</h4>
+                        <p>Over 15,000 theses and dissertations have been completed at Penn State in the last 20 years. This explorer curates an exploration of emerging ideas,
+                            their intersectionality with other subject areas, and the academic programs and dissertation advisors that have championed them.</p>
+                        <p>Dissertations at Penn State are managed through the <a href="https://etda.libraries.psu.edu/">Electronic Theses and Dissertations (eTD) database</a>.</p>
+<!--                        <p style="font-size:18px;">Start by choosing <span class="research_area_popup" style="font-weight:bold;">keywords and programs of interest</span>.-->
+<!--                            Then select the appropriate <span class="research_area_popup" style="font-weight:bold;">date range and access levels</span>.-->
+<!--                            Explore the <span class="research_area_popup" style="font-weight:bold;">resulting theses and dissertations</span>-->
+<!--                        or download publication details for further review. Click <b>full screen</b> to see more details about each publication.</p>-->
+=======
+    <meta charset="UTF-8">
+    <title>PSU Dissertation Explorer</title>
+    <script type="text/javascript" src="static/dc.js_2.1.10/web/js/d3.js"></script>
+    <script type="text/javascript" src="static/dc.js_2.1.10/web/js/crossfilter.js"></script>
+    <script type="text/javascript" src="static/dc.js_2.1.10/web/js/dc.js"></script>
+    <script type="text/javascript" src="static/dc.js_2.1.10/src/data-grid.js"></script>
+    <script type="text/javascript" src="static/dcjs_example/underscore-min.js"></script>
+
+    <script type="text/javascript" src="static/dc_leaflet/web/js/leaflet.js"></script>
+    <script src="static/dc_leaflet/web/js/colorbrewer.js"></script>
+    <script type="text/javascript" src="static/dc_leaflet/web/js/leaflet.markercluster.js"></script>
+    <script type="text/javascript" src="static/dc_leaflet/web/js/dc.leaflet.js"></script>
+    <script type="text/javascript" src="static/dc.js_2.1.10/web/js/d3-queue.v3.min.js"></script>
+
+<script src="static/dcjs_example/jquery.min.js"></script>
+	<link type="text/css" href="static/dc.js_2.1.10/web/css/dc.css" rel="stylesheet"/>
+    <link type="text/css" href="static/bootstrap_4.0/css/bootstrap_4.0.0-alpha.3.css" rel="stylesheet">
+    <link type="text/css" href="static/dc_leaflet/web/css/leaflet.css" rel="stylesheet"/>
+	<link type="text/css" href="static/dc_leaflet/web/css/MarkerCluster.Default.css" rel="stylesheet"/>
+	<link type="text/css" href="static/dc_leaflet/web/css/MarkerCluster.css" rel="stylesheet"/>
+	<link type="text/css" href="static/dc_leaflet/web/css/leaflet-legend.css" rel="stylesheet"/>
+    <link href='https://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+    <style>
+        .landing {
+            background:rgba(255, 255, 255, 0.95);
+            padding:25px;
+
+        }
+    .audience {
+      min-height: 30rem;
+      position: relative;
+      display: table;
+      width: 100%;
+      height: auto;
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("static/site/img/rob-bye-325768-unsplash_small.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .audience h1 {
+      font-size: 4rem;
+      margin: 0;
+      padding: 0;
+      color:white;
+
+    }
+
+    @media (min-width: 992px) {
+      .audience {
+        height: 100vh;
+      }
+      .audience h1 {
+        font-size: 5.5rem;
+      }
+    }
+
+
+
+        td._0 {
+            min-width:100px;
+            max-width:200px;
+        }
+        td._3 {
+            min-width:200px;
+            max-width:900px;
+
+        }
+
+        h2.script {
+          font: 400 45px/1.3 'Oleo Script', Helvetica, sans-serif;
+          color: #2b2b2b;
+          text-shadow: 1px 1px 0px #ededed, 2px 2px 0px rgba(0,0,0,0.15);
+        }
+        h4.script{
+          font: 400 25px/1.3 'Lobster', Helvetica, sans-serif;
+          color: #2b2b2b;
+          text-shadow: 1px 1px 0px #ededed, 1px 1px 0px rgba(0,0,0,0.15);
+        }
+        .panel{
+            background:white;
+            box-shadow: 1px 1px lightgray;
+            padding-top:15px;
+            padding-bottom:25px;
+            padding-left:25px;
+            margin-right:5px;
+            margin-bottom:25px;
+        }
+
+        #dissertation_table.fullscreen{
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            padding-top:25px;
+            top: 0;
+            left: 0;
+            background:#f2f2f2;
+         }
+        .keywords g.row text,
+        .sub_keywords g.row text,
+        .programs g.row text,
+        .degree_name g.row text,
+        .committee g.row text,
+        .authors g.row text,
+        .access g.row text{
+            fill: black;
+            font-size:10pt;
+            }
+    </style>
+</head>
+<body>
+    <script>
+        function grid(selector, dataset){
+            var data = dataset['research']
+            //console.log('Data', data)
+            var dissertations = crossfilter(data),
+                all = dissertations.groupAll();
+
+            dc.dataCount(".dc-data-count")
+                        .dimension(dissertations)
+                        .group(all);
+
+            function roundMonths(date) {
+                        date.setDate(1);
+                        return date;
+                    }
+
+            function remove_empty_bins(source_group) {
+                return {
+                    all: function () {
+                        return source_group.top(15).filter(function (d) {
+                            return d.value != 0;
+                        });
+                    }
+                };
+            }
+
+            function remove_empty_bins_50(source_group) {
+                return {
+                    all: function () {
+                        return source_group.top(50).filter(function (d) {
+                            return d.value != 0;
+                        });
+                    }
+                };
+            }
+
+            function remove_empty_text_bins(source_group) {
+                return {
+                    all: function () {
+                        return source_group.all().filter(function (d) {
+                            return d.key != "";
+                        });
+                    }
+                };
+            }
+
+            function remove_empty_bins_all(source_group) {
+                return {
+                    all: function () {
+                        return source_group.all().filter(function (d) {
+                            return (d.value > 0 & d.key != "");
+                        });
+                    }
+                };
+            }
+
+            function remove_negative_bins_all(source_group) {
+                return {
+                    all: function () {
+                        return source_group.all().filter(function (d) {
+                            return ( d.key != "" & d.key!='others');
+                        });
+                    }
+                };
+            }
+
+            function remove_negative_top_N(source_group,n) {
+                return {
+                    all: function () {
+                        return source_group.top(n).filter(function (d) {
+                            return ( d.key != "-1" & d.key!='others');
+                        });
+                    }
+                };
+            }
+
+            function remove_negative_bins_top50(source_group) {
+                return {
+                    all: function () {
+                        return source_group.top(50).filter(function (d) {
+                            return ( d.key != "-1");
+                        });
+                    }
+                };
+            }
+            function filter_dimension_by_search(source_group,search_list) {
+                return {
+                    all: function () {
+                        return source_group.all().filter(function (d) {
+                            return ( search_list.indexOf(d.key) != -1);
+                        });
+                    }
+                };
+            }
+
+            function rotateBarChartLabels(classvar) {
+                d3.selectAll(selector + ' .' + classvar + '  g .axis.x text')
+                    .style("text-anchor", "end")
+                    .attr("transform", function (d) {
+                        return "rotate(-55, -4, 9) ";
+                    });
+            }
+            function rotateRowChartLabels(classvar) {
+                d3.selectAll(selector + ' .' + classvar + '  g .tick text')
+                    .style("text-anchor", "end")
+                    .attr("transform", function (d) {
+                        return "rotate(-55, -4, 9) ";
+                    });
+            }
+
+            function toTitleCase(str) {
+                return str.replace(/\w\S*/g, function (txt) {
+                    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+                });
+            }
+
+
+            function addXLabel(classvar, textcontent) {
+                var target = d3.select('.' + classvar + ' svg')
+                if (target.select('text.x-axis-label').empty()) {
+                    target
+                        .append("text")
+                        .attr("class", "x-axis-label")
+                        .attr("text-anchor", "middle")
+                        .attr("x", $('div.' + classvar + '').width() / 2)
+                        .attr("y", $('div.' + classvar + '').height() - 50)
+                        .text(textcontent)
+                }
+            }
+
+             //--------- STYLES -----------------
+            var pixels_per_row = 30;
+            var label_offset = -10;
+            // ---------------------------------
+
+            var link_base = "https://etda.libraries.psu.edu/files/final_submissions/"
+            //-----------------------------------------------------
+            var keywords = dissertations.dimension(function (d) {
+                if (typeof d.keyword_ssim == "undefined") return "";
+                var filt = [];
+                d.keyword_ssim.forEach(function(e){filt.push(toTitleCase(e.toLowerCase()))});
+                return filt
+            }, true);
+            var keywordsGroup = remove_negative_top_N(keywords.group().reduceSum(function (d) {
+                return 1;
+            }),500);
+            //console.log('Keywords', keywordsGroup.all())
+             //-----------------------------------------------------
+            var keywords_sub = dissertations.dimension(function (d) {
+                if (typeof d.keyword_ssim == "undefined") return "";
+                var filt = [];
+                d.keyword_ssim.forEach(function(e){filt.push(toTitleCase(e.toLowerCase()))});
+                return filt
+            }, true)
+            var keywords_subGroup = remove_negative_top_N(keywords_sub.group().reduceSum(function (d) {
+                return 1;
+            }),500);
+            //console.log('SubKeywords', keywords_subGroup.all())
+            //-----------------------------------------------------
+            var access_level = dissertations.dimension(function (d) {
+                if (typeof d.access_level_ss == "undefined") return "";
+                return d.access_level_ss;
+            }, false);
+            var access_levelGroup = remove_negative_bins_all(access_level.group().reduceSum(function (d) {
+                return 1;
+            }));
+            console.log('Access Level', access_levelGroup.all())
+//-----------------------------------------------------
+            var committee = dissertations.dimension(function (d) {
+                if (typeof d.committee_member_name_ssim == "undefined") return "";
+                return d.committee_member_name_ssim;
+            }, true);
+            var committeeGroup = remove_negative_top_N(committee.group().reduceSum(function (d) {
+                return 1;
+            }),250);
+            console.log(committeeGroup.all())
+            //-----------------------------------------------------
+            var degree_name = dissertations.dimension(function (d) {
+                if (typeof d.degree_name_ssi == "undefined") return "";
+                return d.degree_name_ssi;
+            }, false);
+            var degree_nameGroup = remove_negative_bins_all(degree_name.group().reduceSum(function (d) {
+                return 1;
+            }));
+            console.log(degree_nameGroup.all())
+            //-----------------------------------------------------
+            var degree_type = dissertations.dimension(function (d) {
+                if (typeof d.degree_type_ssi == "undefined") return "";
+                return d.degree_type_ssi;
+            }, false);
+            var degree_typeGroup = remove_negative_bins_all(degree_type.group().reduceSum(function (d) {
+                return 1;
+            }));
+            console.log(degree_typeGroup.all())
+
+            //-----------------------------------------------------
+            var last_name = dissertations.dimension(function (d) {
+                if (typeof d.last_name_ssi == "undefined") return "";
+                return d.last_name_ssi;
+            }, false);
+            var last_nameGroup = remove_negative_top_N(last_name.group().reduceSum(function (d) {
+                return 1;
+            }),250);
+            console.log(last_nameGroup.all())
+            //-----------------------------------------------------
+            var program = dissertations.dimension(function (d) {
+                if (typeof d.program_name_ssi == "undefined") return "";
+                return d.program_name_ssi;
+            }, false);
+            var programGroup = remove_negative_bins_all(program.group().reduceSum(function (d) {
+                return 1;
+            }));
+            console.log(programGroup.all())
+             //-----------------------------------------------------
+            var semester = dissertations.dimension(function (d) {
+                if (typeof d.semester_ssi == "undefined") return "";
+                return d.semester_ssi;
+            }, false);
+            var semesterGroup = remove_negative_bins_all(semester.group().reduceSum(function (d) {
+                return 1;
+            }));
+            console.log(semesterGroup.all())
+             //-----------------------------------------------------
+            var year = dissertations.dimension(function (d) {
+                if (typeof d.year_isi == "undefined") return "";
+                return new Date(d3.time.format("%Y").parse(d.year_isi.toString()));
+            }, false);
+            var yearGroup = remove_negative_bins_all(year.group().reduceSum(function (d) {
+                return 1;
+            }));
+            console.log('YEAR', yearGroup.all())
+
+            //-----------------------------------------------------
+           /* var full_date = dissertations.dimension(function (d,i) {
+                if (typeof d.defended_at_dtsi == "undefined") return "";
+                var temp = new Date(d3.time.format("%Y-%m-%dT%H:%M:%SZ").parse(d.defended_at_dtsi.toString()))
+                if (temp.getFullYear()>2020){temp.setFullYear(d.year_isi)}
+                return temp;
+            }, false);
+            var full_dateGroup = remove_empty_bins_all(full_date.group().reduceSum(function (d) {
+                return 1;
+            }));
+            console.log('Full Date', full_dateGroup.all())*/
+
+            //------------ CHARTS -----------------------------
+             function order_by_name(chart){
+                chart.ordering(function (d) {
+                            return d.key
+                        });
+                chart.redraw();
+            }
+            function order_by_value(chart){
+                chart.label(function (d) {
+
+                            return '(' + d.value + ')  ' + toTitleCase(d.key)
+                        })
+                    .ordering(function (d) {
+                            return -d.value
+                        });
+                chart.redraw();
+            }
+
+            function order_by_perc(chart,group){
+                var total = 0;
+                group.all().forEach(function(d){
+                    total+=d.value;
+                });
+                console.log('TOTAL', total)
+                chart.label(function (d) {
+                            return '(' + Math.round(100*(d.value/total)) + '%)  ' + toTitleCase(d.key)
+                        })
+                chart.redraw();
+            }
+
+            var bar_access = dc.rowChart(selector + " .access");
+            bar_access
+                        .width($('div.access').width())
+                        .height($('div.access').height())
+                        //.height(access_levelGroup.all().length*pixels_per_row)
+                        //.height(1000 * pixels_per_row).cap(1000)
+                        .gap(1)
+                        .margins({top: 0, right: 0, bottom: 50, left: 10})
+                        .labelOffsetX(-label_offset)
+                        .label(function (d) {
+                            return '(' + d.value + ')  ' + toTitleCase(d.key)
+                        })
+                        .elasticX(true)
+                        .dimension(access_level)
+                        .group(access_levelGroup)
+                        .ordering(function (d) {
+                            return -d.value
+                        })
+                    .on('pretransition', function () {
+                            rotateRowChartLabels('access');
+
+                        });
+            //----------------------------------------------
+            var bar_keywords = dc.rowChart(selector + " .keywords");
+            bar_keywords
+                        .width($('div.keywords').width()*.9)
+                        .height(keywordsGroup.all().length*pixels_per_row)
+                        //.height(1000 * pixels_per_row).cap(1000)
+                        .gap(1)
+                        .margins({top: 0, right: 0, bottom: 50, left: 0})
+                        .x(d3.scale.ordinal())
+                        .labelOffsetX(-label_offset)
+                        .label(function (d) {
+                            return '(' + d.value + ')  ' + toTitleCase(d.key)
+                        })
+                        .elasticX(true)
+                        .dimension(keywords)
+                        .group(keywordsGroup)
+                        .ordering(function (d) {
+                            return -d.value
+                        });
+
+
+            d3.select('span.keyword_name').on('click',function(){return order_by_name(bar_keywords)});
+            d3.select('span.keyword_value').on('click',function(){return order_by_value(bar_keywords)});
+
+
+            //-------------------------------
+            var bar_subkeywords = dc.rowChart(selector + " .sub_keywords");
+            bar_subkeywords
+                        .width($('div.sub_keywords').width()*.9)
+                        .height(keywords_subGroup.all().length*pixels_per_row)
+                        //.height(1000 * pixels_per_row).cap(1000)
+                        .gap(1)
+                        .margins({top: 0, right: 0, bottom: 50, left: 0})
+                        .x(d3.scale.ordinal())
+                        .labelOffsetX(-label_offset)
+                        .label(function (d) {
+                            return '(' + d.value + ')  ' + toTitleCase(d.key)
+                        })
+                        .elasticX(true)
+                        .dimension(keywords_sub)
+                        .group(keywords_subGroup)
+                        .ordering(function (d) {
+                            return -d.value
+                        });
+            d3.select('span.subkeyword_name').on('click',function(){return order_by_name(bar_subkeywords)});
+            d3.select('span.subkeyword_value').on('click',function(){return order_by_value(bar_subkeywords)});
+            //------------------------------
+            var bar_program = dc.rowChart(selector + " .programs");
+            bar_program
+                .width($('div.programs').width()*.9)
+                .height(programGroup.all().length*pixels_per_row)
+                //.height(1000 * pixels_per_row).cap(1000)
+                .gap(1)
+                .margins({top: 0, right: 0, bottom: 50, left: 0})
+                .x(d3.scale.ordinal())
+                .labelOffsetX(-label_offset)
+                .label(function (d) {
+                    return '(' + d.value + ')  ' + toTitleCase(d.key)
+                })
+                .elasticX(true)
+                .dimension(program)
+                .group(programGroup)
+                .ordering(function (d) {
+                    return -d.value
+                });
+
+            var bar_committee = dc.rowChart(selector + " .committee");
+            bar_committee
+                .width($('div.committee').width()*.9)
+                .height(committeeGroup.all().length*pixels_per_row)
+                //.height(1000 * pixels_per_row).cap(1000)
+                .gap(1)
+                .margins({top: 0, right: 0, bottom: 50, left: 0})
+                .x(d3.scale.ordinal())
+                .labelOffsetX(-label_offset)
+                .label(function (d) {
+                    return '(' + d.value + ')  ' + toTitleCase(d.key)
+                })
+                .elasticX(true)
+                .dimension(committee)
+                .group(committeeGroup)
+                .ordering(function (d) {
+                    return -d.value
+                });
+
+            var bar_author = dc.rowChart(selector + " .authors");
+            bar_author
+                .width($('div.authors').width()*.9)
+                .height(last_nameGroup.all().length*pixels_per_row)
+                //.height(1000 * pixels_per_row).cap(1000)
+                .gap(1)
+                .margins({top: 0, right: 0, bottom: 50, left: 0})
+                .x(d3.scale.ordinal())
+                .labelOffsetX(-label_offset)
+                .label(function (d) {
+                    return '(' + d.value + ')  ' + toTitleCase(d.key)
+                })
+                .elasticX(true)
+                .dimension(last_name)
+                .group(last_nameGroup)
+                .ordering(function (d) {
+                    return -d.value
+                });
+
+             var bar_date = dc.barChart(selector+ ' .year_date')
+             bar_date
+                        .width($('div.year_date').width())
+                        .height($('div.year_date').height())
+                        .margins({top: 10, right: 0, bottom: 50, left: 50})
+                        .x(d3.time.scale().domain([new Date(1990, 5, 20, 12), new Date(2020, 5, 20, 18)]).range([new Date(1990, 5, 20, 12), new Date(2020, 5, 20, 18)]))
+                        .yAxis(d3.svg.axis().ticks(4).orient('left'))
+                        .xUnits(d3.time.years)
+                        .brushOn(true)
+                        .elasticX(false)
+                        .elasticY(true)
+                        //.xAxisLabel('Publication Date')
+                        .yAxisLabel('Publications')
+                        .dimension(year)
+                        .barPadding(0.1)
+                        .outerPadding(0.05)
+                        .group(yearGroup)
+                        .on('pretransition', function () {
+                            rotateBarChartLabels('year_date');
+                            bar_date.select('g text.x-axis-label').attr("y", "10")
+                            bar_date.select('g text.y-axis-label').attr("y", "10")
+                        });
+
+             /*var bar_fulldate = dc.barChart(selector+ ' .full_date')
+             bar_fulldate
+                        .width($('div.full_date').width())
+                        .height($('div.full_date').height())
+                        .margins({top: 10, right: 0, bottom: 50, left: 50})
+                        .x(d3.time.scale())//.domain([new Date(1990, 5, 20, 12), new Date(2020, 5, 20, 18)]).range([new Date(1990, 5, 20, 12), new Date(2020, 5, 20, 18)]))
+                        .yAxis(d3.svg.axis().ticks(4).orient('left'))
+                        .xUnits(d3.time.months)
+                        .brushOn(true)
+                        .elasticX(true)
+                        .elasticY(true)
+                        //.xAxisLabel('Publication Date')
+                        .yAxisLabel('Publications')
+                        .dimension(full_date)
+                        .barPadding(0.1)
+                        .outerPadding(0.05)
+                        .group(full_dateGroup)
+                        .on('pretransition', function () {
+                            rotateBarChartLabels('year_date');
+                            bar_date.select('g text.x-axis-label').attr("y", "10")
+                            bar_date.select('g text.y-axis-label').attr("y", "10")
+                        });
+*/
+            var bar_degree_name = dc.rowChart(selector + " .degree_name");
+            bar_degree_name
+                        .width($('div.degree_name').width()*.9)
+                        .height(degree_nameGroup.all().length*pixels_per_row)
+                        //.height(1000 * pixels_per_row).cap(1000)
+                        .gap(1)
+                        .margins({top: 0, right: 0, bottom: 50, left: 0})
+                        .x(d3.scale.ordinal())
+                        .labelOffsetX(-label_offset)
+                        .label(function (d) {
+                            return '(' + d.value + ')  ' + toTitleCase(d.key)
+                        })
+                        .elasticX(true)
+                        .dimension(degree_name)
+                        .group(degree_nameGroup)
+                        .ordering(function (d) {
+                            return -d.value
+                        })
+
+
+            //--- INITIALIZE --------
+            d3.select('span.program_total').text(programGroup.all().filter(function(e){return e.value>0}).length)
+
+
+             function remove_from_subkeywords(source_group,target_chart, n) {
+                        return {
+                            all: function () {
+                                return source_group.all().filter(function (d) {
+                                     return ( d.key != "-1" & d.key!='others' & (target_chart.filters().indexOf(d.key)==-1));
+                                });
+                            }
+                        };
+                    }
+            var allcharts = [
+                bar_program,
+                bar_keywords,
+                bar_subkeywords,
+                bar_author,
+                bar_committee,
+                bar_degree_name
+            ];
+            allcharts.forEach(function(chart){chart.on('filtered',function(d){
+                d3.select('span.program_total').text(programGroup.all().filter(function(e){return e.value>0}).length)
+                if (chart==bar_keywords){
+                   keywords_subGroup = remove_from_subkeywords(keywords_subGroup,bar_keywords,1000)
+                   bar_subkeywords.group(keywords_subGroup)
+                    dc.redrawAll();
+                   d3.select('span.keyword_filters').text(function(d){return bar_keywords.filters()})
+                    }
+                if (chart==bar_subkeywords){
+                   keywordsGroup = remove_from_subkeywords(keywordsGroup,bar_subkeywords,1000)
+                   bar_keywords.group(keywordsGroup)
+                    dc.redrawAll();
+                    d3.select('span.subkeyword_filters').text(function(d){return bar_subkeywords.filters()})
+
+                    }
+                if (chart==bar_program) {
+                    d3.select('span.program_filters').text(function(d){return bar_program.filters()})
+                }
+            })});
+
+
+
+            d3.select('span.program_name').on('click',function(){return order_by_name(bar_program)});
+            d3.select('span.program_value').on('click',function(){return order_by_value(bar_program)});
+            d3.select('span.program_perc').on('click',function(){return order_by_perc(bar_program,programGroup)});
+
+
+
+
+
+
+
+            //---------- TABLE ---------------------
+             var pub_table = dc.dataTable('.dc-data-table');
+                    pub_table
+                        .width($('div.dc-data-table').width())
+                        .height($('div.dc-data-table').height())
+                        .dimension(year)
+                        .group(function (d) {
+                            if (typeof d.program_name_ssi == "undefined") return "";
+                            return d.program_name_ssi
+                        })
+                        .size(500)
+                        .columns([
+                            function (d) {
+                                return d.program_name_ssi
+                            },
+                            function (d) {
+                                return d.year_isi
+                            },
+                            function (d) {
+                                return d.author_name_tesi
+                            },
+                            function (d,i) {
+                                var return_text = "";
+
+                                if (typeof d.title_ssi == "undefined") return_text="<i>None Listed</i>";
+                                if (typeof d.final_submission_file_isim == "undefined") {
+                                    if (d.access_level_ss =='restricted') return_text= '<i>(Restricted)</i style="color:darkred"> '+toTitleCase(d.title_ssi);
+                                    if (d.access_level_ss =='restricted_to_institution') return_text= '<i style="color:darkred">(Requires Login)</i> '+toTitleCase(d.title_ssi);
+                                    return_text= toTitleCase(d.title_ssi);
+                                }
+
+                                else{
+                                   var linked_title = '<a href="https://etda.libraries.psu.edu/files/final_submissions/'+d.final_submission_file_isim[0]+'">'+toTitleCase(d.title_ssi)+'</a>';
+                                     if (d.access_level_ss =='restricted') return_text= '<i style="color:darkred">(Restricted)</i> '+linked_title;
+                                     if (d.access_level_ss =='restricted_to_institution') return_text= '<i style="color:darkred">(Requires Login)</i> '+linked_title;
+                                    return_text= linked_title;
+                                }
+                                //return_text += "<br><br>"+d.abstract_tesi.slice(0,1000)
+                                return return_text
+
+                            },
+                            function (d) {
+                                var listing = "";
+                                if (typeof d.keyword_ssim == "undefined") return "<i>None Listed</i>";
+                                if (d.keyword_ssim.length!=0) {
+                                    d.keyword_ssim.forEach(function (i, j) {
+                                        listing += toTitleCase(i) + "<br>"
+                                    });
+                                    return listing
+                                }
+                                else return "<i>None Listed</i>"
+                            },
+                             function (d) {
+                                var listing = "";
+                                if (typeof d.committee_member_role_ssim == "undefined") return "<i>None Listed</i>";
+                                if (d.committee_member_role_ssim.length!=0) {
+                                    d.committee_member_role_ssim.forEach(function (i, j) {
+                                        if ((i.toLowerCase().indexOf('dissertation advisor')!=-1) | (i.toLowerCase().indexOf('committee chair')!=-1)) {
+                                            listing += toTitleCase(i) + "<br>"
+                                        }
+                                    });
+                                    return listing
+                                }
+                                else return "<i>None Listed</i>"
+                        }
+                        ])
+                        .order(d3.ascending)
+                        .on('renderlet', function (table) {
+                            table.selectAll('.dc-table-group').classed('info', true);
+
+                        })
+
+
+
+
+            function replaceAll(str, find, replace) {
+            return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+        }
+        function escapeRegExp(str) {
+            return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+        }
+        function exportToCsv() {
+           var filename = 'dissertation_export.csv';
+           var rows = program.top(Infinity);
+           rows.sort(function(a,b){
+                  if (a.program_name_ssi===b.program_name_ssi){
+                     return (b.year_isi-a.year_isi);
+                  } else if(a.program_name_ssi>b.program_name_ssi){
+                     return 1;
+                  } else if(a.program_name_ssi<b.program_name_ssi){
+                     return -1;
+                  }
+               });
+            var fields = [];
+            var discard_fields = [
+                'file_name_ssim',
+                'final_submission_file_isim',
+                'id',
+                'released_metadata_at_dtsi',
+                'score',
+                'title_tesi',
+                'db_id',
+                'download_access_group_ssim',
+                'last_name_tesi',
+                'degree_type_slug_ssi',
+                'program_name_tesi',
+                'committee_member_name_ssim',
+                'committee_member_name_tesim',
+                'committee_member_and_role_tesim',
+                'keyword_tesim',
+                'committee_member_email_ssim'
+                ];
+
+
+            Object.keys(rows[0]).forEach(function(d){if (discard_fields.indexOf(d) == -1){fields.push(d)}})
+
+            fields.splice(0, 0, fields.splice(fields.indexOf("abstract_tesi"), 1)[0])
+            fields.splice(0, 0, fields.splice(fields.indexOf("title_ssi"), 1)[0])
+            fields.splice(0, 0, fields.splice(fields.indexOf("author_name_tesi"), 1)[0])
+            fields.splice(0, 0, fields.splice(fields.indexOf('year_isi'), 1)[0])
+            fields.splice(0, 0, fields.splice(fields.indexOf('program_name_ssi'), 1)[0])
+
+            var replacer = function(key, value) { return value === 'nan' ? '' : value };
+            var csv ="";
+           csv+=fields.join(',')+'\r\n';
+           rows.forEach(function(d){
+                var row = [];
+                fields.forEach(function(e) {
+                        if (typeof d[e] == "undefined") {row.push("")
+                        }
+                        else {
+                            var row_data = JSON.stringify(d[e], replacer);
+                            row_data = replaceAll(row_data, '[', '');
+                            row_data = replaceAll(row_data, ']', '');
+                            row_data = replaceAll(row_data, '"', '');
+                            row_data = '"' + row_data + '"';
+                            row.push(row_data)
+                        }
+                });
+                csv+=row.join(',')+'\r\n';
+            });
+
+            var hiddenElement = document.createElement('a');
+                hiddenElement.href = 'data:text/csv;charset=utf-8,' + csv;
+                hiddenElement.target = '_blank';
+                hiddenElement.download = filename;
+                hiddenElement.click();
+        }
+
+        d3.select('span.reset_keywords').on('click',function(d){bar_keywords.filter(null);dc.redrawAll();})
+        d3.select('span.reset_date').on('click',function(d){bar_date.filter(null);dc.redrawAll();})
+
+        d3.select('span.reset_subkeywords').on('click',function(d){bar_subkeywords.filter(null);dc.redrawAll();})
+        d3.select('span.reset_programs').on('click',function(d){bar_program.filter(null);dc.redrawAll();})
+        d3.select('span.reset_degree_name').on('click',function(d){bar_degree_name.filter(null);dc.redrawAll();})
+
+        d3.select('span.reset_all_keywords').on('click',function(d){bar_subkeywords.filter(null); bar_keywords.filter(null);dc.redrawAll();});
+        d3.select('span.reset_all_programs').on('click',function(d){bar_program.filter(null);bar_degree_name.filter(null); dc.redrawAll();});
+        d3.select('span.reset_all_contributors').on('click',function(d){bar_committee.filter(null);bar_author.filter(null); dc.redrawAll();});
+
+
+
+
+
+        d3.select('button.download_table').on('click',exportToCsv)
+
+$('button.table_fullscreen').click(function(e){
+        $('#dissertation_table').toggleClass('fullscreen');
+            console.log('CLICKED!',d3.select('#dissertation_table').classed('fullscreen'))
+            if (d3.select('#dissertation_table').classed('fullscreen')==true){
+                pub_table
+                    .columns([
+                        function (d) {
+                            return d.program_name_ssi
+                        },
+                        function (d) {
+                            return d.year_isi
+                        },
+                        function (d) {
+                            return d.author_name_tesi
+                        },
+                        function (d,i) {
+                            var return_text = "";
+
+                            if (typeof d.title_ssi == "undefined") return_text="<i>None Listed</i>";
+                            if (typeof d.final_submission_file_isim == "undefined") {
+                                if (d.access_level_ss =='restricted') return_text= '<i>(Restricted)</i style="color:darkred"> '+toTitleCase(d.title_ssi);
+                                if (d.access_level_ss =='restricted_to_institution') return_text= '<i style="color:darkred">(Requires Login)</i> '+toTitleCase(d.title_ssi);
+                                return_text= toTitleCase(d.title_ssi);
+                            }
+
+                            else{
+                               var linked_title = '<a href="https://etda.libraries.psu.edu/files/final_submissions/'+d.final_submission_file_isim[0]+'">'+toTitleCase(d.title_ssi)+'</a>';
+                                 if (d.access_level_ss =='restricted') return_text= '<i style="color:darkred">(Restricted)</i> '+linked_title;
+                                 if (d.access_level_ss =='restricted_to_institution') return_text= '<i style="color:darkred">(Requires Login)</i> '+linked_title;
+                                return_text= linked_title;
+                            }
+                            return_text += "<br><br>"+d.abstract_tesi
+                            return return_text
+
+                        },
+                        function (d) {
+                            var listing = "";
+                            if (typeof d.keyword_ssim == "undefined") return "<i>None Listed</i>";
+                            if (d.keyword_ssim.length!=0) {
+                                d.keyword_ssim.forEach(function (i, j) {
+                                    listing += toTitleCase(i) + "<br>"
+                                });
+                                return listing
+                            }
+                            else return "<i>None Listed</i>"
+                        },
+                         function (d) {
+                            var listing = "";
+                            if (typeof d.committee_member_role_ssim == "undefined") return "<i>None Listed</i>";
+                            if (d.committee_member_role_ssim.length!=0) {
+                                d.committee_member_role_ssim.forEach(function (i, j) {
+
+                                    listing += toTitleCase(i) + "<br>"
+                                });
+                                return listing
+                            }
+                            else return "<i>None Listed</i>"
+                    }
+                    ])
+                pub_table.redraw()
+                }
+                else{
+                pub_table
+                    .columns([
+                        function (d) {
+                            return d.program_name_ssi
+                        },
+                        function (d) {
+                            return d.year_isi
+                        },
+                        function (d) {
+                            return d.author_name_tesi
+                        },
+                        function (d,i) {
+                            var return_text = "";
+
+                            if (typeof d.title_ssi == "undefined") return_text="<i>None Listed</i>";
+                            if (typeof d.final_submission_file_isim == "undefined") {
+                                if (d.access_level_ss =='restricted') return_text= '<i>(Restricted)</i style="color:darkred"> '+toTitleCase(d.title_ssi);
+                                if (d.access_level_ss =='restricted_to_institution') return_text= '<i style="color:darkred">(Requires Login)</i> '+toTitleCase(d.title_ssi);
+                                return_text= toTitleCase(d.title_ssi);
+                            }
+
+                            else{
+                               var linked_title = '<a href="https://etda.libraries.psu.edu/files/final_submissions/'+d.final_submission_file_isim[0]+'">'+toTitleCase(d.title_ssi)+'</a>';
+                                 if (d.access_level_ss =='restricted') return_text= '<i style="color:darkred">(Restricted)</i> '+linked_title;
+                                 if (d.access_level_ss =='restricted_to_institution') return_text= '<i style="color:darkred">(Requires Login)</i> '+linked_title;
+                                return_text= linked_title;
+                            }
+                            //return_text += "<br><br>"+d.abstract_tesi.slice(0,1000)
+                            return return_text
+
+                        },
+                        function (d) {
+                            var listing = "";
+                            if (typeof d.keyword_ssim == "undefined") return "<i>None Listed</i>";
+                            if (d.keyword_ssim.length!=0) {
+                                d.keyword_ssim.forEach(function (i, j) {
+                                    listing += toTitleCase(i) + "<br>"
+                                });
+                                return listing
+                            }
+                            else return "<i>None Listed</i>"
+                        },
+                         function (d) {
+                            var listing = "";
+                            if (typeof d.committee_member_role_ssim == "undefined") return "<i>None Listed</i>";
+                            if (d.committee_member_role_ssim.length!=0) {
+                                d.committee_member_role_ssim.forEach(function (i, j) {
+                                    if ((i.toLowerCase().indexOf('dissertation advisor')!=-1) | (i.toLowerCase().indexOf('committee chair')!=-1)) {
+                                            listing += toTitleCase(i) + "<br>"
+                                        }
+                                });
+                                return listing
+                            }
+                            else return "<i>None Listed</i>"
+                    }
+                    ]);
+                pub_table.redraw()
+
+            }
+         });
+
+            dc.renderAll();
+        }
+    </script>
+    <header class="audience d-flex">
+      <div class="container text-center my-auto landing">
+          <div class="mb-1 " style="text-align:left; padding-top:25px;padding-bottom:5px;">
+                        <h2 class="script">Pennsylvania State University Dissertation Explorer</h2>
+                        <h4 class="script">Graduate school is about exploration and discovery.  Bringing unlikely threads of thought together in order to weave a new
+                        way of thinking, a new technology, a new path forward.</h4>
+                        <p>Over 13,000 theses and dissertations have been defeneded at Penn State in the last 20 years. This explorer curates an exploration of emerging ideas,
+                            their intersectionality with other subject areas, and the academic programs and dissertation advisors that have championed them.</p>
+                        <p>Dissertations at Penn State are managed through the <a href="https://etda.libraries.psu.edu/">Electronic Theses and Dissertations (eTD) database</a>.</p>
+                        <p style="font-size:18px;">Start by choosing <span class="research_area_popup" style="font-weight:bold;">keywords and programs of interest</span>.
+                            Then select the appropriate <span class="research_area_popup" style="font-weight:bold;">date range and access levels</span>.
+                            Explore the <span class="research_area_popup" style="font-weight:bold;">resulting theses and dissertations</span>
+                        or download publication details for further review. Click <b>full screen</b> to see more details about each publication.</p>
+>>>>>>> 9004f36b36ebc8e0018a2785b12972f466623b60
+
+        </div>
+          <div class="cta col-lg-6">
+              <a class="btn btn-primary btn-xl js-scroll-trigger" href="#application">Explore the Database</a>
+          </div>
+          <div class="cta col-lg-6">
+<<<<<<< HEAD
+              <p style="text-align:right;">Developed by <a style="color:#6baed6;" href="https://rfraleigh.github.io">Dr. Robbie Fraleigh</a> (updated 10/02/2019)</p>
+          </div>
+          </div>
+          <div class="overlay"></div>
+    </header>
+    <div id="application">
+        <div class="container-fluid" style="padding-left:25px;padding-right:25px;">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="row panel-item" style="display:flex;flex-flow:column; justify-content:space-between">
+                        <div class="col-lg-12 card"  id="program-card" style="">
+                            <div class="header">
+                                <div class="header-title" style="display:inline-block; text-align:center">
+                                    <h4>Programs</h4>
+                                </div>
+                                <div class="header-icon" style="display:inline-block; float:right"></div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-lg-12 app_card height_med" id="program"></div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-lg-12 card " id="keyword-card" style="flex:1" >
+                            <div class="header">
+                                <div class="header-title" style="display:inline-block; text-align:center">
+                                    <h4>Keywords</h4>
+                                </div>
+                                <div class="header-icon" style="display:inline-block; float:right"></div>
+                            </div>
+                            <div class="row components">
+                                <div class="col-lg-12" style="display:flex;flex-flow:column">
+                                    <div class="col-lg-12 app_card height_med primary" id="keyword" style="flex:1 auto"></div>
+                                    <div class="col-lg-12 app_card height_med secondary" id="keyword_drill" style="flex:1 auto"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 card"  id="committee-card" style="">
+                            <div class="header">
+                                <div class="header-title" style="display:inline-block; text-align:center">
+                                    <h4>Committee Members</h4>
+                                </div>
+                                <div class="header-icon" style="display:inline-block; float:right"></div>
+                            </div>
+                            <div class="row components">
+                                <div class="col-lg-12" style="display:flex;flex-flow:column">
+                                    <div class="col-lg-12 app_card height_med primary" id="committee" style="flex:1 auto"></div>
+                                    <div class="col-lg-12 app_card height_med secondary" id="committee_drill" style="flex:1 auto"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-12 card"  id="author-card" style="">
+                            <div class="header">
+                                <div class="header-title" style="display:inline-block; text-align:center">
+                                    <h4>Authors</h4>
+                                </div>
+                                <div class="header-icon" style="display:inline-block; float:right"></div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-lg-12 app_card height_med" id="author"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="row panel-item" style="display:flex;justify-content:space-between">
+                        <div class="col-lg-12 card " id="date-card" style="flex:1" >
+                            <div class="header">
+                                <div class="header-title" style="display:inline-block; text-align:center">
+<!--                                    <h4>Defense Date</h4>-->
+                                </div>
+                                <div class="header-icon" style="display:inline-block; float:right"></div>
+                            </div>
+                            <div class="row components">
+                                <div class="col-lg-6" style="">
+                                    <div class="row">
+                                        <div class="col-lg-12 app_card height_med" id="date" ></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 app_card height_xs" id="degree_type"></div>
+                                        <div class="col-lg-6 app_card height_xs" id="degree_desc"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="row">
+                                        <div class="col-lg-12 " style="text-align:left; padding-top:25px;padding-bottom:5px;">
+                                            <h2 class="script">Pennsylvania State University Dissertation Explorer</h2>
+                                            <p>Dissertations at Penn State are managed through the <a href="https://etda.libraries.psu.edu/">Electronic Theses and Dissertations (eTD) database</a>.</p>
+                                            <p style="font-size:18px;">Start by choosing <span class="research_area_popup" style="font-weight:bold;">keywords and programs of interest</span>.
+                                                Then select the appropriate <span class="research_area_popup" style="font-weight:bold;">date range and degree types</span>.
+                                                Explore the <span class="research_area_popup" style="font-weight:bold;">resulting theses and dissertations</span>
+                                            or download publication details for further review. </p>
+<!--                                            <p>Click <b>Details</b> to see more details about each publication.</p>-->
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row"  style="">
+                        <div class="col-lg-12">
+                            <div class="card" id="">
+                                <div class="card-header">
+                                     <div class="row">
+                                        <div class="col-lg-12" id="export_data" style="display:flex">
+                                            <div class="col-lg-6" style="padding:15px;"><h5>Filtered Records</h5></div>
+                                            <div class="col-lg-6 results_header" id="paging" style="padding: 15px;" >
+                                                Showing<span id="begin" style="padding-left:10px;padding-right:5px;"></span>
+                                                -<span id="end" style="padding-right:10px;padding-left:5px;"></span>
+                                                 of<span id="size" style="padding-left:10px;padding-right:10px;"></span>Records.
+                                              <input id="Prev" class="btn-sm btn-primary" role="button" type="button" value="Prev"  />
+                                              <input id="Next" class="btn-sm btn-primary" role="button" type="button" value="Next" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive col-md-12" id="table-graph" style="background:white; height:600px;overflow:auto;">
+                                    <table class='table table-hover table-striped table-bordered dc-table-graph' id='dc-table-graph' >
+                                      <thead>
+                                        <tr class='table-header'></tr>
+                                      </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mylightbox" class="lightbox">
+            <h3>HELLO WORLD</h3>
+        <div>
+
+    </div>
+
+    <script type="text/javascript" src="assets/app/js/load_data.js"></script>
+    <script type="text/javascript" src="assets/app/js/smooth_scrolling.js"></script>
+
+
+=======
+              <p style="text-align:right;">Developed by <a style="color:cornflowerblue;" href="https://rfraleigh.github.io">Dr. Robbie Fraleigh</a></p>
+          </div>
+
+
+
+
+      </div>
+      <div class="overlay"></div>
+    </header>
+    <div class="application" id="application" style="padding-left:50px;padding-right:50px;padding-top:50px;background:#c9d3de">
+
+        <div class="row">
+            <div class="col-lg-5">
+
+                <div class ="row panel">
+                    <h3>Explore the Intersectionality of Subject Areas  <span style="font-size:16px;color:blue" class="reset_all_keywords" >Reset Keywords</span></h3>
+                    <p>Author Submitted Keyword Descriptions of Their Work</p>
+                    <div class="col-lg-6">
+                        <h5>Initial Keyword Collection</h5>
+                        <p></p>
+                        <p><span class="reset_keywords" style="color:blue">Reset Bag</span> | Sort by <span class="keyword_value" style="color:blue">Count</span> or by <span class="keyword_name" style="color:blue">Name</span></p>
+                        <div class="col-lg-12 keywords" style="height:300px;overflow:auto "></div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h5>Downselect Collection</h5>
+                        <p></p>
+                        <p><span class="reset_subkeywords" style="color:blue">Reset Bag</span> | Sort by <span class="subkeyword_value" style="color:blue">Count</span> or by <span class="subkeyword_name" style="color:blue">Name</span></p>
+
+                        <div class="col-lg-12 sub_keywords" style="height:300px;overflow:auto "></div>
+                    </div>
+                </div>
+                <div class = "row panel">
+
+                    <h3>Academic Programs  <span style="font-size:16px;color:blue" class="reset_all_programs" >Reset Programs and Degrees</span></h3>
+                    <div class="col-lg-7" style="padding-top:25px;">
+                        <p>Showing <span class="program_total"></span> Programs </p>
+                        <p style="margin-top:-10px"><span class="reset_programs" style="color:blue">Reset</span> | Sort by <span class="program_value" style="color:blue">Count</span>,
+                            <span class="program_perc" style="color:blue"> % </span>, or
+                            <span class="program_name" style="color:blue">Name</span></p>
+                        <div class="col-lg-12 programs" style="height:300px;overflow:auto "></div>
+                    </div>
+                    <div class="col-lg-5" style="padding-top:25px;padding-bottom:10px;">
+                        <h5>Degree Name</h5>
+                        <p><span class="reset_degree_name" style="color:blue">Reset</span></p>
+                        <div class="col-lg-12 degree_name" style="height:300px;overflow:auto "></div>
+                    </div>
+                </div>
+                <div class ="row panel">
+
+                    <h3>Contributors  <span style="font-size:16px;color:blue" class="reset_all_contributors" >Reset Contributors</span></h3>
+                    <div class="col-lg-6">
+                        <h5>Theses Authors</h5>
+                        <p><span class="reset_authors" style="color:blue">Reset</span> | Sort by <span class="author_value" style="color:blue">Count</span> or by <span class="author_name" style="color:blue">Name</span></p>
+                        <div class="col-lg-12 authors" style="height:300px;overflow:auto "></div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h5>Committee Chairs</h5>
+                        <p><span class="reset_committee" style="color:blue">Reset</span> | Sort by <span class="chair_value" style="color:blue">Count</span> or by <span class="chair_name" style="color:blue">Name</span></p>
+
+                        <div class="col-lg-12 committee" style="height:300px;overflow:auto "></div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-lg-7">
+                <div class="row panel">
+                    <div class="col-lg-12 " style="text-align:left; padding-top:25px;padding-bottom:5px;">
+                        <h2 class="script">Pennsylvania State University Dissertation Explorer</h2>
+                        <p>Dissertations at Penn State are managed through the <a href="https://etda.libraries.psu.edu/">Electronic Theses and Dissertations (eTD) database</a>.</p>
+                        <p style="font-size:18px;">Start by choosing <span class="research_area_popup" style="font-weight:bold;">keywords and programs of interest</span>.
+                            Then select the appropriate <span class="research_area_popup" style="font-weight:bold;">date range and access levels</span>.
+                            Explore the <span class="research_area_popup" style="font-weight:bold;">resulting theses and dissertations</span>
+                        or download publication details for further review. Click <b>full screen</b> to see more details about each publication.</p>
+                    </div>
+                </div>
+                <div class="row panel">
+                    <div class="col-lg-4">
+                        <h4>Access Level</h4>
+                        <div class="col-lg-12 access" style="height:150px;"></div>
+                    </div>
+                    <div class="col-lg-8">
+                        <h4>Defense Date  <span style="font-size:16px;color:blue" class="reset_date" >Reset Date</span> </h4>
+                        <div class="col-lg-12 year_date" style="height:150px;"></div>
+                    </div>
+                </div>
+                <div class="row panel">
+                    <div class="col-md-12 dc-data-count" id="dissertation_table">
+
+                        <h4><span class="total-count"></span> Theses | <span class="filter-count"></span> Selected  <button class="btn-sm btn-primary download_table" type="submit">Download Selection</button></h4>
+                        <input  style="position:absolute; top:0px; right:150px" class="btn-sm btn-primary" type="button" onclick="location.href='https://webaccess.psu.edu/?cosign-etda.libraries.psu.edu&https://etda.libraries.psu.edu/catalog';" value="PSU Login" />
+                        <p>Filtering Keywords: <span class="keyword_filters"></span> | Sub Filters: <span class="subkeyword_filters"></span></p>
+                        <p>Filtering Academic Programs: <span class="program_filters"></span>
+                        <!--<button class="psu_login btn-sm btn-primary" type="submit" style="position:absolute; top:8px; right:150px" href="https://etda.libraries.psu.edu/login">Penn State Login</button>-->
+                        <button class="table_fullscreen" style="position:absolute; top:0px; right:25px">Full Screen</button>
+                          <div class="table-responsive" style="height:850px;overflow: auto;">
+                              <table class="table col-md-12 dc-data-table" id="pubtable">
+                                    <thead class="fixed-header" id="fixed-header" >
+                                        <tr >
+                                          <th class="dc-table-column _0 ">Program</th>
+                                          <th class="dc-table-column _1">Year</th>
+                                          <th class="dc-table-column _2">Author</th>
+                                          <th class="dc-table-column _3">Title</th>
+                                          <th class="dc-table-column _4">Keywords</th>
+                                          <th class="dc-table-column _5">Committee</th>
+                                        </tr>
+                                    </thead>
+                               </table>
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+
+        </div>
+    </div>
+    <script>
+
+        $(function() {
+        var lookup = 'file-lookup.json';
+        var dataset = d3.queue();
+        d3.json(lookup, function (lookup_data) {
+            var dataset_lookup = [];
+            Object.keys(lookup_data).forEach(function (key) {
+                if (key == 'dissertations') {
+                    dataset_lookup.push(key)
+                }
+            });
+            lookup_data[dataset_lookup[0]].forEach(function (d) {
+                dataset.defer(d3.json, d)
+            });
+
+
+            dataset.awaitAll(function (dataset_error, out_dataset) {
+                if (dataset_error) throw dataset_error;
+                //console.log('dataset', out_dataset);
+                var dataset_list = [];
+                out_dataset.forEach(function (d) {
+                    dataset_list.push(d)
+                });
+                var dataset_merge = [].concat.apply([], out_dataset)
+                //console.log(dataset_merge)
+
+                var app_data = [];
+                app_data['research'] = dataset_merge;
+                //console.log(app_data);
+                grid("#application", app_data);
+            })
+        })
+    })
+    </script>
+
+    <script src="static/site/jquery/jquery.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="static/site/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="static/site/js/stylish-portfolio.js"></script>
+>>>>>>> 9004f36b36ebc8e0018a2785b12972f466623b60
+</body>
+</html>
