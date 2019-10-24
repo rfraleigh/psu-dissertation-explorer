@@ -213,7 +213,11 @@ function application(selector,dataset){
     d3.select("#author-card i.zmdi-window-minimize").dispatch('click');
 
     d3.select('#table-graph').style('max-height','900px').style('overflow','auto')
-
+    console.log('BODY WIDTH', $('body').width())
+    if ($('body').width()<1000){
+        d3.select("#program-card i.zmdi-window-minimize").dispatch('click');
+        d3.select("#keyword-card i.zmdi-window-minimize").dispatch('click');
+    }
     /*data_dict = record_button(data_dict,'keyword', 'detail-keyword')
 
     function record_button(data_dict,div,key){
