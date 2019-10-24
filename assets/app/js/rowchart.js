@@ -34,7 +34,7 @@ function build_simple_rowchart(div, dim, grp, pixel_per_row, label_offset, title
             return "#6baed6"
         })
         .on('pretransition',function(){
-            d3.selectAll(div+ ' g text').style('font-size','14px').style('fill','black')
+            d3.selectAll(div+ ' g text').style('font-size','12px').style('fill','black')
         })
         .xAxis().ticks(5)
 
