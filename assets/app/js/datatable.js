@@ -38,7 +38,7 @@ function textfield__author(d,text){
     text+="<br>"
     d['meta_keywords'].forEach(function(keyword){
         text += "<button type='button' id='detail-"+keyword+"' class='btn btn-sm btn-primary detail-keyword' " +
-                "style='font-size:12px;color:white;'>"+
+                "style='font-size:12px;color:white;margin-bottom:5px;'>"+
                 toTitleCase(keyword)+
                 "</button>\n"
     })
@@ -64,11 +64,11 @@ function textfield__content(d,text){
     var description = abstract;
     var highlighted = d['meta_keywords']
             description = replaceAll(description,'\n','<br>')
-            highlighted.forEach(function(keyword){
-                description = replaceAll(description,keyword,'<mark style="background-color: #FFFF00; font-weight:bold; padding-top:0px;padding-bottom:0px;">'+keyword+'</mark>')
-                description = replaceAll(description,toTitleCase(keyword),'<mark style="background-color: #FFFF00; font-weight:bold; padding-top:0px;padding-bottom:0px;">'+toTitleCase(keyword)+'</mark>')
-            })
-    text += "<p id='description_column' class='reduced' style='font-size:12px;line-height:14px;overflow:auto;max-height:400px;'>" +
+            // highlighted.forEach(function(keyword){
+            //     description = replaceAll(description,keyword,'<mark style="background-color: #FFFF00; font-weight:bold; padding-top:0px;padding-bottom:0px;">'+keyword+'</mark>')
+            //     description = replaceAll(description,toTitleCase(keyword),'<mark style="background-color: #FFFF00; font-weight:bold; padding-top:0px;padding-bottom:0px;">'+toTitleCase(keyword)+'</mark>')
+            // })
+    text += "<p id='description_column' class='reduced' style='font-size:12px;line-height:14px;max-height:400px;'>" +
                 description
                 "</p>\n"
     return text

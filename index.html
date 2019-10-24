@@ -72,10 +72,10 @@
     </header>
     <div id="application">
         <div class="container-fluid" style="padding-left:25px;padding-right:25px;">
-            <div class="row">
-                <div class="col-lg-3">
+            <div class="row" style="flex-wrap: wrap; align-content:stretch">
+                <div class="col" style="width:250px;flex-grow:1;flex-basis:25%">
                     <div class="row panel-item" style="display:flex;flex-flow:column; justify-content:space-between">
-                        <div class="col-lg-12 card"  id="program-card" style="">
+                        <div class="col-lg-12 card"  id="program-card">
                             <div class="header">
                                 <div class="header-title" style="display:inline-block; text-align:center">
                                     <h4>Programs</h4>
@@ -83,8 +83,7 @@
                                 <div class="header-icon" style="display:inline-block; float:right"></div>
                             </div>
                             <div class="row">
-
-                                <div class="col-lg-12 app_card height_med" id="program"></div>
+                                <div class="col-lg-12 app_card height_med" id="program" ></div>
 
                             </div>
 
@@ -136,7 +135,7 @@
 
                     </div>
                 </div>
-                <div class="col-lg-9">
+                <div class="col" style="min-width:500px;flex: .5 .5 auto;flex-basis:75%">
                     <div class="row panel-item" style="display:flex;justify-content:space-between">
                         <div class="col-lg-12 card " id="date-card" style="flex:1" >
                             <div class="header">
@@ -145,7 +144,7 @@
                                 </div>
                                 <div class="header-icon" style="display:inline-block; float:right"></div>
                             </div>
-                            <div class="row components">
+                            <div class="row components" style="display:flex; flex-flow:nowrap row-reverse">
                                 <div class="col-lg-6" style="">
                                     <div class="row">
                                         <div class="col-lg-12 app_card height_med" id="date" ></div>
@@ -174,7 +173,7 @@
                     </div>
                     <div class="row"  style="">
                         <div class="col-lg-12">
-                            <div class="card" id="">
+                            <div class="card" >
                                 <div class="card-header">
                                      <div class="row">
                                         <div class="col-lg-12" id="export_data" style="display:flex">
@@ -189,7 +188,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="table-responsive col-md-12" id="table-graph" style="background:white; height:600px;overflow:auto;">
+                                <div class="table-responsive col-md-12" id="table-graph" style="background:white;">
                                     <table class='table table-hover table-striped table-bordered dc-table-graph' id='dc-table-graph' >
                                       <thead>
                                         <tr class='table-header'></tr>

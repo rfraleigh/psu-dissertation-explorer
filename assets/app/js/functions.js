@@ -163,6 +163,7 @@ function test_search(full_grp,limited_grp,chart, q,div) {
 }
 
 
+
 function minimize_card(div){
         d3.select(div).select('.header-icon').append('i').attr('class','zmdi zmdi-window-minimize')
         var minimize_height = 100;

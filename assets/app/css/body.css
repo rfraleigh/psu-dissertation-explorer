@@ -16,6 +16,7 @@ body {
 
 #keyword-card,#committee-card,#author-card,#program-card {
     margin:15px;
+
 }
 .panel-item{
     margin:15px;
@@ -79,18 +80,6 @@ body {
     height: 125px;
     overflow: auto;
 }
-#sender_email.app_card .chart,
-#receiver_email.app_card .chart,
-#concepts.app_card .chart,
-#thesaurus.app_card .chart,
-#country.app_card .chart,
-#university.app_card .chart
-{
-    height: 250px;
-    overflow: auto;
-}
-
-
 .zmdi {
     font-size: 18px;
     padding-left:7px;

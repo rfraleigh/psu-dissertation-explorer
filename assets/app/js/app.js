@@ -188,6 +188,8 @@ function application(selector,dataset){
             .domain([new Date(d3.timeParse('%Y')('1999')), new Date(d3.timeParse('%Y')('2021'))])
             .range([new Date(d3.timeParse('%Y')('1999')), new Date(d3.timeParse('%Y')('2021'))])
         )
+
+
     dc.redrawAll();
     minimize_card('#keyword-card')
     minimize_card('#committee-card')
@@ -210,7 +212,7 @@ function application(selector,dataset){
     d3.select("#committee-card i.zmdi-window-minimize").dispatch('click');
     d3.select("#author-card i.zmdi-window-minimize").dispatch('click');
 
-
+    d3.select('#table-graph').style('max-height','900px').style('overflow','auto')
 
     /*data_dict = record_button(data_dict,'keyword', 'detail-keyword')
 
