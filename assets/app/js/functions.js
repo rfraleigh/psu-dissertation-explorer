@@ -119,16 +119,19 @@ function test_search(full_grp,limited_grp,chart, q,div) {
                 var append_key = d3.select(this).attr('value').split(',')[0];
                 return chart.filters().indexOf(append_key)!=-1 ? 'lightblue' : 'whitesmoke'})
               .on('click',function(d){
-                var append_key = d3.select(this).attr('value').split(',')[0];
-                var append_value = parseInt(d3.select(this).attr('value').split(',')[1]);
+                  console.log('clicked')
+
+                var append_length = d3.select(this).attr('value').split(',').length
+                var append_value = parseInt(d3.select(this).attr('value').split(',')[append_length-1]);
+                var append_key = d3.select(this).attr('value').split(',').slice(0,append_length-1).join(',');
+                console.log(d3.select(this).attr('value').split(',').length,append_value,append_key)
+
                 var curr_filters = chart.filters();
 
                 //Add to Keywords Group if not already there
                 if (limited_grp.all().filter(function(e){return e.key==append_key}).length==0){
                     limited_grp = group_append(limited_grp,{'key':append_key,'value':append_value})}
-                console.log('original filters',curr_filters,limited_grp.all().length)
-
-
+                console.log('original filters',curr_filters,limited_grp.all().length,limited_grp.all() );
 
                 chart.group(limited_grp);
                 chart.filter(append_key);
@@ -142,7 +145,6 @@ function test_search(full_grp,limited_grp,chart, q,div) {
 
           })
               .on('mouseover',function(d){
-
                   d3.select(this).style('color','blue').style("font-weight", "bold").style('cursor','pointer')
                   //d3.select(this).style("background", chart.filters().indexOf(append_key)!=-1 ? 'lightblue' : 'whitesmoke');
               })
